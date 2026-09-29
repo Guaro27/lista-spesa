@@ -10,6 +10,51 @@ const categorie = [
   "Casa",
   "Altro",
 ];
+function determinaCategoria(nomeProdotto) {
+  const nome = nomeProdotto.toLowerCase().trim();
+
+  if (
+    ["latte", "yogurt", "formaggio", "mozzarella", "burro", "panna", "ricotta", "parmigiano"]
+      .some((parola) => nome.includes(parola))
+  ) {
+    return "Latticini";
+  }
+
+  if (
+    ["mela", "mele", "banana", "banane", "arancia", "arance", "pera", "pere",
+     "fragola", "fragole", "pomodoro", "pomodori", "patata", "patate",
+     "carota", "carote", "insalata", "zucchina", "zucchine", "melanzana", "melanzane"]
+      .some((parola) => nome.includes(parola))
+  ) {
+    return "Frutta e verdura";
+  }
+
+  if (
+    ["pollo", "carne", "manzo", "vitello", "maiale", "prosciutto",
+     "salame", "salsiccia", "pesce", "salmone", "tonno"]
+      .some((parola) => nome.includes(parola))
+  ) {
+    return "Carne e pesce";
+  }
+
+  if (
+    ["acqua", "coca", "pepsi", "aranciata", "succo", "birra",
+     "vino", "bevanda", "tè", "the"]
+      .some((parola) => nome.includes(parola))
+  ) {
+    return "Bevande";
+  }
+
+  if (
+    ["detersivo", "sapone", "shampoo", "bagnoschiuma",
+     "carta igienica", "scottex", "spugna", "candeggina"]
+      .some((parola) => nome.includes(parola))
+  ) {
+    return "Casa";
+  }
+
+  return "Dispensa";
+}
 
 function App() {
   const [prodotti, setProdotti] = useState([]);
@@ -99,7 +144,12 @@ function App() {
             type="text"
             placeholder="Cosa devi comprare?"
             value={nome}
-            onChange={(e) => setNome(e.target.value)}
+            onChange={(e) => {const valore = e.target.value;
+            setNome(valore);
+              if (valore.trim() !== "") {setCategoria(determinaCategoria(valore));
+              } else {setCategoria("Dispensa");}
+            }
+          }
           />
 
           <input
