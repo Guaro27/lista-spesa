@@ -209,7 +209,7 @@ function App() {
         <header className="header">
           <div>
             <p className="sottotitolo">LA TUA LISTA</p>
-            <h1>🛒 Spesa Facile</h1>
+            <h1><img src="/favicon.svg" alt="" /> Spesa Facile</h1><p className="intro">La spesa di ogni giorno, con semplicità.</p>
           </div>
 
           <div className="statistiche">
@@ -219,10 +219,13 @@ function App() {
         </header>
 
         <form className="form" onSubmit={aggiungiProdotto}>
+          <h2>Aggiungi alla lista</h2>
+          <label className="campo-nome">Prodotto
 
           <input
             type="text"
-            placeholder="Cosa devi comprare?"
+            placeholder="Ad esempio: pane, latte, mele"
+            required
             value={nome}
             onChange={(e) => {const valore = e.target.value;
             setNome(valore);
@@ -232,14 +235,20 @@ function App() {
           }
           />
 
+          </label>
+          <label className="campo-quantita">Quantità
           <input
             className="quantita-input"
             type="number"
             min="1"
+            step="1"
+            required
             value={quantita}
             onChange={(e) => setQuantita(e.target.value)}
           />
 
+          </label>
+          <label className="campo-categoria">Categoria
           <select
             value={categoria}
             onChange={(e) => setCategoria(e.target.value)}
@@ -251,6 +260,8 @@ function App() {
             ))}
           </select>
 
+          </label>
+          <p className="form-aiuto">La categoria si sceglie da sola. Puoi cambiarla.</p>
           <button type="submit">
             + Aggiungi
           </button>
@@ -268,7 +279,7 @@ function App() {
               <span>{percentuale}%</span>
             </div>
 
-            <div className="barra">
+            <div className="barra" role="progressbar" aria-label="Prodotti acquistati" aria-valuenow={percentuale} aria-valuemin={0} aria-valuemax={100}>
               <div
                 className="barra-riempimento"
                 style={{ width: `${percentuale}%` }}
@@ -282,7 +293,7 @@ function App() {
 
           {prodotti.length === 0 ? (
             <div className="vuoto">
-              <div className="icona-vuoto">🛍️</div>
+              <div className="icona-vuoto"><img src="/favicon.svg" alt="" /></div>
 
               <h2>La lista è vuota</h2>
 
@@ -308,7 +319,7 @@ function App() {
                 >
 
                   <h2 className="titolo-categoria">
-                    {cat}
+                    <span aria-hidden="true">{["🥖", "🍎", "🐟", "🥛", "🫙", "💧", "❄️", "🧽", "🧼", "🛍️"][categorie.indexOf(cat)]}</span> {cat}<span className="conteggio">{prodottiCategoria.length}</span>
                   </h2>
 
                   {prodottiCategoria.map((prodotto) => (
@@ -323,6 +334,8 @@ function App() {
 
                       <button
                         className="checkbox"
+                        aria-label={`Segna ${prodotto.nome} come ${prodotto.acquistato ? "da acquistare" : "acquistato"}`}
+                        aria-pressed={prodotto.acquistato}
                         onClick={() =>
                           completaProdotto(prodotto.id)
                         }
@@ -336,13 +349,15 @@ function App() {
                         </span>
 
                         <span className="categoria-prodotto">
-                          {prodotto.categoria}
+                          {prodotto.acquistato ? "Acquistato" : "Da acquistare"}
                         </span>
                       </div>
 
                       <div className="controllo-quantita">
 
                         <button
+                          aria-label={`Diminuisci quantità di ${prodotto.nome}`}
+                          disabled={prodotto.quantita <= 1}
                           onClick={() =>
                             cambiaQuantita(
                               prodotto.id,
@@ -358,6 +373,7 @@ function App() {
                         </span>
 
                         <button
+                          aria-label={`Aumenta quantità di ${prodotto.nome}`}
                           onClick={() =>
                             cambiaQuantita(
                               prodotto.id,
@@ -372,11 +388,12 @@ function App() {
 
                       <button
                         className="elimina"
+                        aria-label={`Elimina ${prodotto.nome}`}
                         onClick={() =>
                           eliminaProdotto(prodotto.id)
                         }
                       >
-                        🗑️
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7M14 10v7" /></svg>
                       </button>
 
                     </div>
