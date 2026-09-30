@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 const categorie = [
@@ -128,10 +128,19 @@ function determinaCategoria(nomeProdotto) {
 }
 
 function App() {
-  const [prodotti, setProdotti] = useState([]);
+  const [prodotti, setProdotti] = useState(() => {
+  const prodottiSalvati = localStorage.getItem("lista-spesa");
+  return prodottiSalvati? JSON.parse(prodottiSalvati):[];
+});
   const [nome, setNome] = useState("");
   const [quantita, setQuantita] = useState(1);
   const [categoria, setCategoria] = useState("Dispensa");
+  useEffect(() => {
+  localStorage.setItem(
+    "lista-spesa",
+    JSON.stringify(prodotti)
+  );
+}, [prodotti]);
 
   function aggiungiProdotto(e) {
     e.preventDefault();
