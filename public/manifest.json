@@ -1,0 +1,23 @@
+{
+  "name": "Spesa Facile",
+  "short_name": "Spesa Facile",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f4f7f5",
+  "theme_color": "#32a060",
+  "icons": [
+    {
+      "src": "/shopping_bag.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/shopping_bag.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
