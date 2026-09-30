@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import AppUpdate from "./AppUpdate.jsx";
 
 const categorie = [
   "Pane e forno",
@@ -219,6 +220,7 @@ function App() {
   return (
     <div className="app">
       <div className="container">
+        <AppUpdate />
 
         <header className="header">
           <div>

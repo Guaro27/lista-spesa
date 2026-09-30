@@ -66,3 +66,7 @@ footer { text-align: center; color: #526451; margin-top: 24px; }
  .progressione { padding: 18px; }
 }
 @media (max-width: 360px) { .app { padding-left: 10px; padding-right: 10px; } .form { padding: 16px; } h1 { font-size: 24px; } .prodotto { gap: 8px; padding: 12px; } }
+
+.aggiornamento { padding: 20px; margin-bottom: 24px; border: 2px solid #245c40; border-radius: 18px; background: #fffdf9; }
+.aggiornamento p { margin: 0 0 12px; }
+.aggiornamento button { min-height: 52px; padding: 12px 20px; border: 0; border-radius: 12px; background: #245c40; color: white; font-weight: 700; }
