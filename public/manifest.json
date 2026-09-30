@@ -8,13 +8,13 @@
   "theme_color": "#32a060",
   "icons": [
     {
-      "src": "/shopping_bag.png",
+      "src": "/Shopping_bag.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/shopping_bag.png",
+      "src": "/Shopping_bag.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
