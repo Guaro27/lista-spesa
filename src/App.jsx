@@ -2,58 +2,129 @@ import { useState } from "react";
 import "./App.css";
 
 const categorie = [
-  "Dispensa",
+  "Pane e forno",
   "Frutta e verdura",
   "Carne e pesce",
-  "Latticini",
+  "Latticini e uova",
+  "Dispensa",
   "Bevande",
-  "Casa",
+  "Surgelati",
+  "Casa e pulizia",
+  "Bagno e igiene",
   "Altro",
 ];
+
 function determinaCategoria(nomeProdotto) {
   const nome = nomeProdotto.toLowerCase().trim();
 
+  const contiene = (parole) =>
+    parole.some((parola) => nome.includes(parola));
+
   if (
-    ["latte", "yogurt", "formaggio", "mozzarella", "burro", "panna", "ricotta", "parmigiano"]
-      .some((parola) => nome.includes(parola))
+    contiene([
+      "pane", "panino", "panini", "rosetta", "baguette",
+      "focaccia", "pizza", "cracker", "crackers",
+      "grissini", "fette biscottate"
+    ])
   ) {
-    return "Latticini";
+    return "Pane e forno";
   }
 
   if (
-    ["mela", "mele", "banana", "banane", "arancia", "arance", "pera", "pere",
-     "fragola", "fragole", "pomodoro", "pomodori", "patata", "patate",
-     "carota", "carote", "insalata", "zucchina", "zucchine", "melanzana", "melanzane"]
-      .some((parola) => nome.includes(parola))
+    contiene([
+      "mela", "mele", "banana", "banane", "arancia", "arance",
+      "pera", "pere", "fragola", "fragole", "limone", "limoni",
+      "mandarino", "mandarini", "uva", "kiwi", "pesca", "pesche",
+      "anguria", "melone",
+      "pomodoro", "pomodori", "patata", "patate",
+      "carota", "carote", "insalata", "lattuga",
+      "zucchina", "zucchine", "melanzana", "melanzane",
+      "cipolla", "cipolle", "aglio", "peperone", "peperoni",
+      "broccoli", "spinaci", "verdura", "frutta"
+    ])
   ) {
     return "Frutta e verdura";
   }
 
   if (
-    ["pollo", "carne", "manzo", "vitello", "maiale", "prosciutto",
-     "salame", "salsiccia", "pesce", "salmone", "tonno"]
-      .some((parola) => nome.includes(parola))
+    contiene([
+      "pollo", "carne", "manzo", "vitello", "maiale",
+      "tacchino", "hamburger", "bistecca",
+      "prosciutto", "salame", "mortadella", "salsiccia",
+      "pesce", "salmone", "tonno", "merluzzo",
+      "orata", "gamberi"
+    ])
   ) {
     return "Carne e pesce";
   }
 
   if (
-    ["acqua", "coca", "pepsi", "aranciata", "succo", "birra",
-     "vino", "bevanda", "tè", "the"]
-      .some((parola) => nome.includes(parola))
+    contiene([
+      "latte", "yogurt", "formaggio", "mozzarella",
+      "burro", "panna", "ricotta", "parmigiano",
+      "provola", "uovo", "uova"
+    ])
+  ) {
+    return "Latticini e uova";
+  }
+
+  if (
+    contiene([
+      "acqua", "coca cola", "coca", "pepsi",
+      "aranciata", "succo", "birra", "vino",
+      "tè", "the", "caffè", "camomilla"
+    ])
   ) {
     return "Bevande";
   }
 
   if (
-    ["detersivo", "sapone", "shampoo", "bagnoschiuma",
-     "carta igienica", "scottex", "spugna", "candeggina"]
-      .some((parola) => nome.includes(parola))
+    contiene([
+      "surgelato", "surgelati", "gelato", "gelati",
+      "ghiaccioli", "patatine surgelate",
+      "pizza surgelata", "minestrone surgelato"
+    ])
   ) {
-    return "Casa";
+    return "Surgelati";
   }
 
-  return "Dispensa";
+  if (
+    contiene([
+      "detersivo", "candeggina", "ammorbidente",
+      "sgrassatore", "lavatrice", "lavastoviglie",
+      "spugna", "spugne", "scottex",
+      "carta cucina", "sacchetti", "sacchi spazzatura"
+    ])
+  ) {
+    return "Casa e pulizia";
+  }
+
+  if (
+    contiene([
+      "carta igienica", "sapone", "shampoo",
+      "bagnoschiuma", "dentifricio", "spazzolino",
+      "deodorante", "rasoio", "rasoi",
+      "assorbenti", "cotone", "dischetti",
+      "salviette", "collutorio"
+    ])
+  ) {
+    return "Bagno e igiene";
+  }
+
+  if (
+    contiene([
+      "pasta", "riso", "farina", "zucchero", "sale",
+      "olio", "aceto", "passata", "pelati",
+      "legumi", "fagioli", "ceci", "lenticchie",
+      "biscotti", "cereali", "marmellata",
+      "nutella", "miele", "maionese", "ketchup",
+      "spezie"
+    ])
+  ) {
+    return "Dispensa";
+  }
+
+  return "Altro";
 }
 
 function App() {
