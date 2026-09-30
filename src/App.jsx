@@ -11,6 +11,7 @@ const categorie = [
   "Surgelati",
   "Casa e pulizia",
   "Bagno e igiene",
+  "Informatica e tecnologia",
   "Altro",
 ];
 
@@ -122,6 +123,19 @@ function determinaCategoria(nomeProdotto) {
     ])
   ) {
     return "Dispensa";
+  }
+
+  if (
+    contiene([
+      "computer", "laptop", "notebook", "tablet", 
+      "smartphone", "telefono", "cuffie", "auricolari",
+      "mouse", "tastiera", "monitor", "stampante",
+      "router", "chiavetta", "hard disk", "ssd",
+      "scheda video", "scheda madre", "processore",
+      "ram", "alimentatore", "case"
+    ])
+  ) {
+    return "Informatica e tecnologia";
   }
 
   return "Altro";
