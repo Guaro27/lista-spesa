@@ -403,3 +403,130 @@ footer {
   }
 
 }
+/* OTTIMIZZAZIONE SMARTPHONE ANDROID + IPHONE */
+
+@media (max-width: 600px) {
+
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .app {
+    width: 100%;
+    min-height: 100dvh;
+    padding: 20px 12px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* HEADER */
+
+  .header {
+    gap: 10px;
+  }
+
+  h1 {
+    font-size: 26px;
+    line-height: 1.15;
+  }
+
+  .statistiche {
+    width: 62px;
+    height: 62px;
+    flex-shrink: 0;
+  }
+
+  /* FORM */
+
+  .form {
+    display: grid;
+    grid-template-columns: 1fr 75px;
+    gap: 8px;
+  }
+
+  .form input,
+  .form select,
+  .form button {
+    min-width: 0;
+    min-height: 48px;
+    font-size: 16px;
+  }
+
+  .form input[type="text"] {
+    width: 100%;
+  }
+
+  .quantita-input {
+    width: 100%;
+  }
+
+  .form select {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .form button {
+    grid-column: 1 / -1;
+    width: 100%;
+    padding: 14px;
+  }
+
+  /* PRODOTTI */
+
+  .prodotto {
+    width: 100%;
+    padding: 12px 10px;
+    gap: 8px;
+  }
+
+  .checkbox {
+    width: 30px;
+    height: 30px;
+    margin-right: 2px;
+  }
+
+  .info-prodotto {
+    min-width: 0;
+  }
+
+  .nome-prodotto {
+    font-size: 16px;
+    overflow-wrap: anywhere;
+  }
+
+  .categoria-prodotto {
+    font-size: 11px;
+    overflow-wrap: anywhere;
+  }
+
+  /* QUANTITÀ */
+
+  .controllo-quantita {
+    flex-shrink: 0;
+    margin-right: 2px;
+    gap: 4px;
+  }
+
+  .controllo-quantita button {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  .controllo-quantita span {
+    min-width: 18px;
+  }
+
+  /* CESTINO */
+
+  .elimina {
+    flex-shrink: 0;
+    padding: 6px;
+    font-size: 17px;
+  }
+}
