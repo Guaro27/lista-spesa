@@ -10,6 +10,7 @@ const categorie = [
   "Dispensa",
   "Bevande",
   "Surgelati",
+  "barattoli",
   "Casa e pulizia",
   "Bagno e igiene",
   "Informatica e tecnologia",
@@ -88,6 +89,17 @@ function determinaCategoria(nomeProdotto) {
     ])
   ) {
     return "Surgelati";
+  }
+
+  if (
+    contiene([
+      "barattolo", "barattoli", "vasetto", "vasetti",
+      "conserva", "conserve", "salsa", "salse",
+      "sottaceto", "sottolio", "marmellata",
+      "nutella", "miele"
+    ])
+  ) {
+    return "barattoli";
   }
 
   if (
