@@ -96,7 +96,7 @@ function determinaCategoria(nomeProdotto) {
       "barattolo", "barattoli", "vasetto", "vasetti",
       "conserva", "conserve", "salsa", "salse",
       "sottaceto", "sottolio", "marmellata",
-      "nutella", "miele"
+      "nutella", "miele", "fagioli in scatola", "piselli in scatola", "mais in scatola"
     ])
   ) {
     return "barattoli";
