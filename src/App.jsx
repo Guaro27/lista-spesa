@@ -27,7 +27,25 @@ function determinaCategoria(nomeProdotto) {
     contiene([
       "pane", "panino", "panini", "rosetta", "baguette",
       "focaccia", "pizza", "cracker", "crackers",
-      "grissini", "fette biscottate"
+      "grissini", "fette biscottate", "brioche", "cornetto", "ciabatta", "bagel",
+      "wasa", "tartine", "pita", "tortilla", "pan carré", "pan bauletto",
+      "panettone", "pandoro", "colomba", "biscotti", "frollini", "merendine",
+      "torte", "crostate", "muffin", "ciambelle", "biscottini", "biscottone",
+      "biscottino", "biscottone al cioccolato", "biscottino al cioccolato",
+      "biscottone alla frutta", "biscottino alla frutta",
+      "biscottone al burro", "biscottino al burro",
+      "biscottone integrale", "biscottino integrale",
+      "biscottone senza zucchero", "biscottino senza zucchero",
+      "biscottone senza glutine", "biscottino senza glutine",
+      "biscottone vegano", "biscottino vegano", "biscottone biologico", "biscottino biologico",
+      "biscottone artigianale", "biscottino artigianale",
+      "biscottone industriale", "biscottino industriale",
+      "biscottone confezionato", "biscottino confezionato",
+      "biscottone sfuso", "biscottino sfuso",
+      "biscottone da forno", "biscottino da forno",
+      "biscottone da pasticceria", "biscottino da pasticceria",
+      "biscottone da panetteria", "biscottino da panetteria", "wasa integrale", "wasa senza glutine", 
+      "wasa senza zucchero", "wasa biologico", "wasa vegano"
     ])
   ) {
     return "Pane e forno";
@@ -55,7 +73,12 @@ function determinaCategoria(nomeProdotto) {
       "tacchino", "hamburger", "bistecca",
       "prosciutto", "salame", "mortadella", "salsiccia",
       "pesce", "salmone", "tonno", "merluzzo",
-      "orata", "gamberi"
+      "orata", "gamberi", "cozze", "vongole", "calamari", "seppie",
+      "polpo", "aragosta", "granchio", "sogliola", "spigola",
+      "acciughe", "alici", "sardine", "trota", "sgombro",
+      "crostacei", "frutti di mare", "filetto di pesce", "filetti di pesce", 
+      "trancio di pesce", "tranci di pesce", "carpaccio di pesce", "carpacci di pesce", 
+      "bocconcini di carne", "bocconcini di pesce"
     ])
   ) {
     return "Carne e pesce";
@@ -65,7 +88,13 @@ function determinaCategoria(nomeProdotto) {
     contiene([
       "latte", "yogurt", "formaggio", "mozzarella",
       "burro", "panna", "ricotta", "parmigiano",
-      "provola", "uovo", "uova"
+      "provola", "uovo", "uova", "frittata", "frittate", "crema", "gelato",
+      "cagliata", "caciotta", "pecorino", "gorgonzola", "asiago",
+      "grana", "emmental", "fontina", "taleggio", "stracchino",
+      "crescenza", "mascarpone", "ricottina", "ricottone",
+      "latte condensato", "latte scremato", "latte intero",
+      "latte parzialmente scremato", "latte di capra", "latte di mucca",
+      "latte di pecora", "latte di bufala"
     ])
   ) {
     return "Latticini e uova";
@@ -75,7 +104,20 @@ function determinaCategoria(nomeProdotto) {
     contiene([
       "acqua", "coca cola", "coca", "pepsi",
       "aranciata", "succo", "birra", "vino",
-      "tè", "the", "caffè", "camomilla"
+      "tè", "the", "caffè", "camomilla",
+      "bevanda", "bibita", "frizzante", "gassata",
+      "analcolica", "alcolica", "cocktail", "aperitivo",
+      "spumante", "prosecco", "whisky", "rum",
+      "vodka", "gin", "tequila", "liquore",
+      "sciroppo", "frullato", "smoothie", 
+      "latte di mandorla", "latte di soia", "latte di avena",
+      "latte di riso", "latte di cocco", "latte di nocciola",
+      "latte di canapa", "latte di anacardi", "latte di pistacchio",
+      "latte di castagne", "latte di quinoa", "latte di farro",
+      "latte di kamut", "latte di orzo", "latte di segale",
+      "latte di miglio", "latte di avena e mandorla",
+      "latte di soia e riso", "latte di cocco e ananas",
+      "latte di nocciola e cacao",
     ])
   ) {
     return "Bevande";
@@ -85,7 +127,19 @@ function determinaCategoria(nomeProdotto) {
     contiene([
       "surgelato", "surgelati", "gelato", "gelati",
       "ghiaccioli", "patatine surgelate",
-      "pizza surgelata", "minestrone surgelato"
+      "pizza surgelata", "minestrone surgelato",
+      "verdure surgelate", "frutti di mare surgelati",
+      "pollo surgelato", "carne surgelata", "pesce surgelato",
+      "cibi pronti surgelati", "piatti pronti surgelati",
+      "dolci surgelati", "torte surgelate", "biscotti surgelati",
+      "gelato alla vaniglia", "gelato al cioccolato", "gelato alla fragola",
+      "gelato al pistacchio", "gelato al limone", "gelato al caffè",
+      "gelato alla nocciola", "gelato alla stracciatella", "gelato alla menta",
+      "gelato alla frutta", "gelato alla crema", "gelato al caramello",
+      "gelato al cocco", "gelato al mango", "gelato al lampone",
+      "gelato al melone", "gelato all'anguria", "gelato all'ananas",
+      "gelato alla banana", "gelato alla pesca", "gelato all'albicocca",
+      "gelato alla ciliegia", "gelato alla pera", "gelato all'uva"
     ])
   ) {
     return "Surgelati";
@@ -96,7 +150,16 @@ function determinaCategoria(nomeProdotto) {
       "barattolo", "barattoli", "vasetto", "vasetti",
       "conserva", "conserve", "salsa", "salse",
       "sottaceto", "sottolio", "marmellata",
-      "nutella", "miele", "fagioli in scatola", "piselli in scatola", "mais in scatola"
+      "nutella", "miele", "fagioli", "piselli", "mais",
+      "tonno", "sardine", "acciughe", "alici", "salmone affumicato",
+      "sugo", "sughi", "passata di pomodoro", "pelati",
+      "pesto", "ketchup", "maionese", "senape",
+      "salsa barbecue", "salsa piccante", "salsa di soia",
+      "salsa al curry", "salsa al pesto", "salsa al formaggio",
+      "salsa al cioccolato", "salsa alla vaniglia", "salsa al caramello",
+      "salsa al limone", "salsa all'arancia", "salsa al mango",
+      "salsa al peperoncino", "salsa al basilico", "salsa al rosmarino",
+      "salsa alla menta", "salsa all'aglio", "salsa alla cipolla"
     ])
   ) {
     return "barattoli";
@@ -107,7 +170,17 @@ function determinaCategoria(nomeProdotto) {
       "detersivo", "candeggina", "ammorbidente",
       "sgrassatore", "lavatrice", "lavastoviglie",
       "spugna", "spugne", "scottex",
-      "carta cucina", "sacchetti", "sacchi spazzatura"
+      "carta cucina", "sacchetti", "sacchi spazzatura",
+      "guanti", "guanto", "panni", "panno",
+      "pulizia", "casa", "bagno", "cucina", "stanza",
+      "aspirapolvere", "scopa", "mocio", "secchio",
+      "panno cattura polvere", "panno cattura peli",
+      "panno cattura sporco", "panno cattura macchie",
+      "panno cattura grasso", "panno cattura unto",
+      "panno cattura acqua", "panno cattura liquidi",
+      "panno cattura polvere e peli", "panno cattura sporco e macchie", 
+      "panno cattura grasso e unto", "panno cattura acqua e liquidi", 
+      "panno cattura polvere, peli, sporco, macchie, grasso, unto, acqua e liquidi"
     ])
   ) {
     return "Casa e pulizia";
@@ -119,7 +192,15 @@ function determinaCategoria(nomeProdotto) {
       "bagnoschiuma", "dentifricio", "spazzolino",
       "deodorante", "rasoio", "rasoi",
       "assorbenti", "cotone", "dischetti",
-      "salviette", "collutorio"
+      "salviette", "collutorio", "crema", "lozione", "profumo",
+      "igiene personale", "cura del corpo", "cura dei capelli",
+      "cura della pelle", "cura del viso", "cura delle mani", "cura dei piedi",
+      "cura delle unghie", "cura dei denti", "cura della bocca", "cura degli occhi", 
+      "cura delle labbra", "cura del naso", "cura delle orecchie", "cura dei capelli", 
+      "cura del cuoio capelluto", "cura della barba", "cura dei baffi", "cura dei peli", 
+      "cura dei peli del corpo", "cura dei peli del viso", "cura dei peli delle gambe", 
+      "cura dei peli delle braccia", "cura dei peli del petto", "cura dei peli della schiena", 
+      "cura dei peli dell'inguine", "cura dei peli delle ascelle"
     ])
   ) {
     return "Bagno e igiene";
@@ -132,7 +213,14 @@ function determinaCategoria(nomeProdotto) {
       "legumi", "fagioli", "ceci", "lenticchie",
       "biscotti", "cereali", "marmellata",
       "nutella", "miele", "maionese", "ketchup",
-      "spezie"
+      "spezie", "pepe", "curry", "paprika", "origano",
+      "basilico", "rosmarino", "timo", "salvia",
+      "aglio in polvere", "cipolla in polvere",
+      "brodo", "dado", "salsa di soia", "salsa barbecue",
+      "salsa piccante", "salsa di pomodoro", "salsa al curry", "salsa al pesto", "salsa al formaggio",
+      "salsa al cioccolato", "salsa alla vaniglia", "salsa al caramello", "salsa al limone", "salsa all'arancia",
+      "salsa al mango", "salsa al peperoncino", "salsa al basilico", "salsa al rosmarino", "salsa alla menta",
+      "salsa all'aglio", "salsa alla cipolla"
     ])
   ) {
     return "Dispensa";
@@ -145,7 +233,18 @@ function determinaCategoria(nomeProdotto) {
       "mouse", "tastiera", "monitor", "stampante",
       "router", "chiavetta", "hard disk", "ssd",
       "scheda video", "scheda madre", "processore",
-      "ram", "alimentatore", "case"
+      "ram", "alimentatore", "case", "ventola", "cavo", "caricabatterie", 
+      "power bank", "usb", "hdmi", "ethernet", "wi-fi", "bluetooth", 
+      "software", "app", "programma", "sistema operativo", "antivirus", "firewall", "cloud", "backup", "virtualizzazione",
+      "informatica", "tecnologia", "elettronica", "digitale",
+      "smartwatch", "orologio intelligente", "fotocamera", "macchina fotografica", 
+      "videocamera", "drone", "stampante 3d", "realtà virtuale", "realtà aumentata",
+      "robotica", "intelligenza artificiale", "automazione", "internet delle cose", "blockchain", "criptovaluta", "bitcoin", "ethereum", "nft",
+      "programmazione", "coding", "sviluppo software", "web development", "app development", "game development",
+      "html", "css", "javascript", "python", "java", "c++", "c#", "php", "ruby", "swift", "kotlin",
+      "database", "sql", "nosql", "mongodb", "mysql", "postgresql",
+      "server", "hosting", "cloud computing", "virtual machine",
+      "cybersecurity"
     ])
   ) {
     return "Informatica e tecnologia";
